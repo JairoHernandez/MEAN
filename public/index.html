@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html ng-app="meanhotel">
+    <head>
+        <title>MEAN hotel</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/custom.css" />
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    </head>
+    <body>
+        <p><a ng-href="/">HOME</a></p>
+        <mh-navigation></mh-navigation>
+        <div class="container">
+            <div ng-view></div>
+        </div>
+
+          <footer class="footer">
+            <div class="container">
+            <p class="text-muted text-center">
+                <a href="http://fullstacktraining.com" target="_blank"><img src="/images/fullstacktraining_logo.png" height="26" alt="Full Stack Training"/></a>
+            </p>
+
+            <p class="text-muted text-center">
+                <small>&copy; 2015 Full Stack Training Ltd</small>
+            </p>
+            </div>
+        </footer>
+
+        <script src="jquery/jquery-3.2.1.min.js"></script>
+        <script src="node_modules/angular/angular.js"></script>
+        <script src="node_modules/angular-route/angular-route.js"></script>
+        <script src="node_modules/angular-jwt/dist/angular-jwt.js"></script>
+
+        <!-- Since nodejs app.js specifies the static folder to be /public all that's needed is this filepath entry relative to /public.-->
+        <script src="angular-app/app.js"></script>
+        <script src="angular-app/hotel-list/hotel-list-controller.js"></script>
+        <script src="angular-app/hotel-display/hotel-display-controller.js"></script>
+        <script src="angular-app/hotel-data-factory/hotel-data-factory.js"></script>
+        <script src="angular-app/hotel-rating/hotel-rating-directive.js"></script>
+        <script src="angular-app/register/register-controller.js"></script>
+        <script src="angular-app/navigation-directive/navigation-directive.js"></script>
+        <script src="angular-app/login/login-controller.js"></script>
+        <script src="angular-app/auth/auth-factory.js"></script>
+        <script src="angular-app/auth/auth-interceptor.js"></script>
+    </body>
+</html>
