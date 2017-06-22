@@ -1,11 +1,13 @@
 var mongoose = require('mongoose');
-var dburl = 'mongodb://localhost:27017/meanhotel';
+//var dburl = 'mongodb://localhost:27017/meanhotel';
+// mongoose.connect(dburl);
 
-mongoose.connect(dburl);
+mongoose.connect(process.env.MONGODB_URI);
 
 // the event is actually called 'connected'.
 mongoose.connection.on('connected', () => {
-	console.log('Mongoose connected to ' + dburl);
+	//console.log('Mongoose connected to ' + dburl);
+	console.log('Mongoose connected to ' + process.env.MONGODB_URI);
 });
 
 mongoose.connection.on('disconnected', () => {
