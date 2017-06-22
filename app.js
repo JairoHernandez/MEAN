@@ -4,6 +4,7 @@ var app = express();
 var path = require('path');
 var routes = require('./api/routes');
 var bodyParser = require('body-parser');
+const port = process.env.PORT || 3000; //process.env.PORT  used by Heroku
 
 // Print out to the console only when a request comes in for path /css.
 app.use((req, res, next) => {
@@ -23,11 +24,11 @@ app.use(bodyParser.json()); // for post form in public/angular-app/hotel-display
 app.use('/api', routes);
 //A
 
-app.set('port', 3000);
-var server = app.listen(app.get('port'), function() {
-    var port = server.address().port;
-    console.log(`Magic happens on port ${port}`);
-});
+// app.set('port', 3000);
+// var server = app.listen(app.get('port'), function() {
+//     var port = server.address().port;
+//     console.log(`Magic happens on port ${port}`);
+// });
 //B
 
 
@@ -44,6 +45,6 @@ var server = app.listen(app.get('port'), function() {
 // });
 
 //B
-// app.listen(3000, () => {
-//     console.log(`Started up on port ${port}`); 
-// });
+app.listen(port, () => {
+    console.log(`Maggic happens on port ${port}`); 
+});
